@@ -1,12 +1,358 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu laboratório GitHub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Laboratório interativo de GitHub Pages, Markdown, Mermaid, matemática, gráficos e visualização 3D.">
+<title>GitHub Pages Lab | Catálogo interativo</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/styles/github-dark.min.css">
+<style>
+:root{--bg:#0b1020;--panel:#111a2e;--panel2:#17233c;--text:#e7eefc;--muted:#a6b4ce;--line:#2a3855;--accent:#7c9cff;--accent2:#59d7b5;--warn:#f4c66a;--danger:#ff8585;--radius:16px;--shadow:0 16px 44px #0003}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(1000px 600px at 10% -10%,#203b6b 0,transparent 60%),var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:#a8bdff}button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:10;background:#0b1020eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topinner{max-width:1440px;margin:auto;padding:12px 22px;display:flex;gap:18px;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#091020;font-weight:900}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{text-decoration:none;color:var(--muted);font-size:13px;padding:7px 10px;border-radius:9px}.nav a:hover,.nav a.active{background:var(--panel2);color:var(--text)}.wrap{max-width:1440px;margin:auto;padding:28px 22px 80px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:stretch;margin:18px 0 30px}.hero-main,.hero-side,.card{background:linear-gradient(150deg,#16233b,#10182b);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.hero-main{padding:34px}.eyebrow{color:var(--accent2);font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.04;letter-spacing:-1.8px;margin:12px 0 16px}.hero p{max-width:780px;color:var(--muted);font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:10px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}.btn.primary{background:linear-gradient(135deg,var(--accent),#8cb9ff);color:#081126;border:0;font-weight:800}.hero-side{padding:22px;display:flex;flex-direction:column;gap:14px;justify-content:center}.stat{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}.stat:last-child{border:0}.stat b{font-size:22px}.stat span{color:var(--muted)}.notice{padding:14px 16px;border-radius:12px;background:#122b35;border:1px solid #28545a;color:#d6fff5;margin:16px 0}.notice.warn{background:#322818;border-color:#70532a;color:#ffeac0}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px}.sidebar{align-self:start;position:sticky;top:84px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}.sidebar h3{margin:4px 8px 10px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.sidebar a{display:block;padding:8px 10px;text-decoration:none;color:var(--muted);border-radius:8px;font-size:14px}.sidebar a:hover{background:var(--panel2);color:var(--text)}main{min-width:0}.section{margin:0 0 28px;scroll-margin-top:86px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}.section h2{font-size:28px;letter-spacing:-.5px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted)}.tag{font-size:11px;color:var(--accent2);border:1px solid #2c665e;padding:4px 8px;border-radius:99px;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{padding:20px;min-width:0}.card h3{margin:0 0 8px;font-size:18px}.card p,.muted{color:var(--muted)}.card p{margin:6px 0 12px}.full{grid-column:1/-1}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.code{white-space:pre-wrap;overflow:auto;background:#080d18;border:1px solid var(--line);border-radius:10px;padding:13px;color:#c9dcff;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}.preview{background:#0d1425;border:1px solid var(--line);border-radius:10px;padding:15px;min-height:100px;overflow:auto}.preview h1,.preview h2,.preview h3{line-height:1.2}.preview table{border-collapse:collapse;width:100%}.preview td,.preview th{border:1px solid var(--line);padding:7px;text-align:left}.preview blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--muted);margin-left:0}.preview img{max-width:100%}.preview pre{overflow:auto;padding:12px;background:#070b14;border-radius:8px}.preview code{font-family:ui-monospace,monospace}.preview input[type=checkbox]{accent-color:var(--accent2)}textarea{width:100%;min-height:230px;resize:vertical;background:#080d18;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:14px;font:13px/1.55 ui-monospace,monospace}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:0 0 auto}.field{background:#080d18;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px 11px;max-width:100%}.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:4px 9px;border:1px solid var(--line);border-radius:99px;font-size:12px;color:var(--muted);margin:3px}.alert{padding:12px 14px;border-radius:10px;margin:8px 0;background:#17243a;border-left:4px solid var(--accent)}.alert.success{border-color:var(--accent2)}.alert.warning{border-color:var(--warn)}.alert.danger{border-color:var(--danger)}#threeCanvas{height:360px;width:100%;display:block;border-radius:12px;background:radial-gradient(circle at 50% 30%,#20365d,#080d18 75%)}.chartbox{height:300px}.diagram{overflow:auto}.resource-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.resource{background:#0d1425;border:1px solid var(--line);padding:13px;border-radius:10px}.resource b{display:block}.resource span{color:var(--muted);font-size:12px}.footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.kbd{font:12px ui-monospace;background:#27334b;border:1px solid #42506a;padding:2px 6px;border-radius:5px}.search{width:min(340px,100%)}.hidden{display:none!important}
+@media(max-width:1000px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}.resource-list{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{display:none}}
+@media(max-width:600px){.wrap{padding:18px 12px 50px}.topinner{padding:10px 12px}.hero-main{padding:23px}.split{grid-template-columns:1fr}.resource-list{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}#threeCanvas{height:280px}}
+</style>
 </head>
 <body>
-  <h1>Meu laboratório GitHub</h1>
-  <p>GitHub Pages está funcionando!</p>
+<header class="topbar"><div class="topinner">
+  <div class="brand"><div class="logo">GH</div><span>GitHub Pages Lab</span></div>
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="#markdown">Markdown</a><a href="#diagramas">Diagramas</a><a href="#3d">3D</a><a href="#dados">Dados</a><a href="#recursos">Catálogo</a>
+  </nav>
+  <input id="globalSearch" class="field search" placeholder="Buscar recurso..." aria-label="Buscar recurso">
+</div></header>
+<div class="wrap">
+<section class="hero">
+  <div class="hero-main">
+    <div class="eyebrow">Laboratório interativo • PT-BR</div>
+    <h1>Explore o que um site no GitHub Pages pode fazer.</h1>
+    <p>Uma vitrine prática de Markdown, diagramas, fórmulas, gráficos, tabelas, animações CSS e visualização 3D. Edite exemplos, observe a renderização e use o catálogo como referência para seus próprios projetos.</p>
+    <div class="actions"><a class="btn primary" href="#markdown">Começar a explorar ↓</a><a class="btn" href="#deploy">Como publicar</a><button class="btn" id="themeBtn">Alternar contraste</button></div>
+    <div class="notice">Este é um site estático. Algumas demonstrações carregam bibliotecas por CDN e precisam de conexão com a internet. Nenhum dado é enviado a um backend.</div>
+  </div>
+  <aside class="hero-side">
+    <div class="stat"><div><b>10+</b><br><span>áreas de demonstração</span></div><span>Explore</span></div>
+    <div class="stat"><div><b>Markdown</b><br><span>editor e pré-visualização</span></div><span>Ao vivo</span></div>
+    <div class="stat"><div><b>3D</b><br><span>modelo giratório e controles</span></div><span>Interativo</span></div>
+    <div class="stat"><div><b>Static</b><br><span>pronto para GitHub Pages</span></div><span>Sem backend</span></div>
+  </aside>
+</section>
+
+<div class="layout">
+<aside class="sidebar">
+  <h3>Explorar</h3>
+  <nav id="sideNav">
+    <a href="#markdown">01 · Markdown ao vivo</a>
+    <a href="#formatacao">02 · Formatação</a>
+    <a href="#codigo">03 · Código</a>
+    <a href="#diagramas">04 · Mermaid</a>
+    <a href="#matematica">05 · Matemática</a>
+    <a href="#3d">06 · Visualização 3D</a>
+    <a href="#graficos">07 · Gráficos</a>
+    <a href="#dados">08 · Tabelas e dados</a>
+    <a href="#css">09 · CSS e animações</a>
+    <a href="#recursos">10 · Catálogo de recursos</a>
+    <a href="#deploy">11 · Publicação</a>
+  </nav>
+  <hr style="border:0;border-top:1px solid var(--line);margin:15px 0">
+  <div class="small">Atalhos úteis</div>
+  <p class="small"><span class="kbd">Ctrl</span> + <span class="kbd">F</span> busca no navegador.<br><span class="kbd">Esc</span> fecha buscas e diálogos do navegador.</p>
+</aside>
+
+<main>
+<section class="section searchable" id="markdown" data-search="markdown editor preview headings links lists tables task list blockquote">
+  <div class="section-head"><div><h2>01. Markdown ao vivo</h2><p>Edite o texto à esquerda e veja a renderização à direita.</p></div><span class="tag">Editor interativo</span></div>
+  <div class="card">
+    <div class="split">
+      <div><h3>Fonte Markdown</h3><textarea id="mdInput" spellcheck="false"># Meu documento
+
+Este é um **laboratório** de *Markdown*.
+
+## Lista de tarefas
+- [x] Criar documentação
+- [ ] Revisar o pipeline
+
+## Tabela
+| Recurso | Status |
+|---|---|
+| Build | Aprovado |
+| Deploy | Pendente |
+
+> [!TIP]
+> Use Markdown para estruturar documentação técnica.
+
+Link: [Documentação GitHub](https://docs.github.com)
+
+`git status`</textarea><div class="row" style="margin-top:10px"><button class="btn primary" id="renderMd">Renderizar</button><button class="btn" id="resetMd">Restaurar exemplo</button></div><p class="small">A prévia usa Marked + DOMPurify via CDN. O parser de Markdown não é uma cópia exata do renderizador do GitHub.</p></div>
+      <div><h3>Pré-visualização</h3><div class="preview" id="mdPreview" aria-live="polite"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section searchable" id="formatacao" data-search="formatacao alertas avisos details summary checklist links imagem">
+  <div class="section-head"><div><h2>02. Formatação e componentes</h2><p>Recursos comuns em documentação e páginas técnicas.</p></div><span class="tag">Markdown + HTML permitido</span></div>
+  <div class="grid">
+    <div class="card"><h3>Alertas</h3><div class="alert">ℹ️ <b>NOTE</b> · Informação complementar.</div><div class="alert success">✅ <b>TIP</b> · Uma dica prática.</div><div class="alert warning">⚠️ <b>WARNING</b> · Atenção antes de executar.</div><div class="alert danger">⛔ <b>CAUTION</b> · Operação de risco.</div><p class="small">No Markdown do GitHub, alertas usam a sintaxe <code>&gt; [!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code> e <code>[!CAUTION]</code>.</p></div>
+    <div class="card"><h3>Conteúdo expansível</h3><details><summary>Mostrar detalhes técnicos</summary><p>Use <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> para esconder logs, exemplos longos ou notas opcionais.</p><pre class="code">&lt;details&gt;
+  &lt;summary&gt;Ver detalhes&lt;/summary&gt;
+  Conteúdo escondido até clicar.
+&lt;/details&gt;</pre></details><hr style="border-color:var(--line)"><h3>Checklist</h3><label><input type="checkbox" checked> Build concluído</label><br><label><input type="checkbox"> Testes de segurança</label><br><label><input type="checkbox"> Aprovação de produção</label></div>
+    <div class="card"><h3>Links e referências</h3><p><a href="https://docs.github.com" target="_blank" rel="noopener">Documentação oficial do GitHub ↗</a></p><p>Referência de issue: <code>#123</code> (no GitHub, pode ser convertida em link).</p><p>Menção: <code>@usuario</code> (usa um nome real no GitHub para notificar alguém, conforme configurações).</p></div>
+    <div class="card"><h3>Imagem responsiva</h3><div style="height:140px;border-radius:10px;background:linear-gradient(135deg,#233d70,#5b9dba,#9bd8bd);display:grid;place-items:center;font-size:42px">▧ ◈ ▧</div><p class="small">Imagens podem ser incluídas com Markdown, HTML compatível ou como arquivos no repositório. Use texto alternativo para acessibilidade.</p></div>
+  </div>
+</section>
+
+<section class="section searchable" id="codigo" data-search="codigo syntax highlighting yaml bash json javascript python">
+  <div class="section-head"><div><h2>03. Código com realce de sintaxe</h2><p>Exemplos de linguagens comuns em plataforma e CI/CD.</p></div><span class="tag">Highlight.js</span></div>
+  <div class="grid">
+    <div class="card"><h3>GitHub Actions · YAML</h3><pre><code class="language-yaml">name: Validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Validation started"</code></pre></div>
+    <div class="card"><h3>Shell</h3><pre><code class="language-bash">set -euo pipefail
+git status
+echo "Pipeline iniciado"
+</code></pre></div>
+    <div class="card"><h3>JSON</h3><pre><code class="language-json">{
+  "environment": "HOM",
+  "securityChecks": true,
+  "artifact": "app-debug.apk"
+}</code></pre></div>
+    <div class="card"><h3>JavaScript</h3><pre><code class="language-javascript">const pipeline = {
+  build: "success",
+  tests: "success",
+  security: "pending"
+};
+console.table(pipeline);</code></pre></div>
+  </div>
+</section>
+
+<section class="section searchable" id="diagramas" data-search="mermaid diagramas flowchart sequence gantt arquitetura">
+  <div class="section-head"><div><h2>04. Diagramas Mermaid</h2><p>Diagramas descritos em texto e renderizados como SVG.</p></div><span class="tag">Mermaid</span></div>
+  <div class="grid">
+    <div class="card full"><h3>Fluxo de CI/CD</h3><div class="diagram mermaid">flowchart TD
+A[Pull Request] --> B[Build]
+B --> C[Testes]
+C --> D{Checks passaram?}
+D -->|Sim| E[Review e merge]
+D -->|Não| F[Analisar logs]
+E --> G[Deploy conforme política]</div></div>
+    <div class="card"><h3>Sequência</h3><div class="diagram mermaid">sequenceDiagram
+participant Dev as Dev
+participant GH as GitHub
+participant CI as Actions
+Dev->>GH: Abre PR
+GH->>CI: Dispara workflow
+CI-->>GH: Publica checks
+GH-->>Dev: Resultado</div></div>
+    <div class="card"><h3>Gantt</h3><div class="diagram mermaid">gantt
+title Ciclo de release
+dateFormat YYYY-MM-DD
+section Build
+Compilar :a1, 2026-10-01, 2d
+section Validacao
+Testes :a2, after a1, 2d
+section Release
+Aprovacao :a3, after a2, 1d</div></div>
+  </div>
+</section>
+
+<section class="section searchable" id="matematica" data-search="latex matematica formula equacao">
+  <div class="section-head"><div><h2>05. Matemática e fórmulas</h2><p>LaTeX inline e em bloco, renderizado no navegador.</p></div><span class="tag">MathJax</span></div>
+  <div class="grid">
+    <div class="card"><h3>Inline</h3><div class="preview">A relação de energia é \(E = mc^2\). Uma média pode ser escrita como \(\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i\).</div></div>
+    <div class="card"><h3>Equação em bloco</h3><div class="preview">\[\sum_{i=1}^{n} i = \frac{n(n+1)}{2}\]<br>\[\sqrt{x^2+y^2}\]</div></div>
+  </div>
+</section>
+
+<section class="section searchable" id="3d" data-search="3d three js webgl modelo cubo renderizacao interativa">
+  <div class="section-head"><div><h2>06. Visualização 3D</h2><p>Modelo 3D interativo com rotação, zoom e mudança de geometria.</p></div><span class="tag">Three.js</span></div>
+  <div class="card">
+    <div class="row" style="justify-content:space-between;margin-bottom:12px"><div><b>Viewport 3D</b><div class="small">Arraste para girar · scroll para zoom</div></div><div class="row"><select id="shapeSelect" class="field"><option value="box">Cubo</option><option value="sphere">Esfera</option><option value="torus">Toroide</option><option value="cone">Cone</option><option value="knot">Nó toroidal</option></select><button id="reset3d" class="btn">Resetar câmera</button></div></div>
+    <canvas id="threeCanvas"></canvas>
+    <div class="row" style="margin-top:14px"><label class="small">Rotação automática <input id="autoRotate" type="checkbox" checked></label><label class="small">Wireframe <input id="wireframe" type="checkbox"></label><label class="small">Escala <input id="scale3d" type="range" min="0.5" max="1.8" step="0.1" value="1"></label></div>
+    <p class="small">Esta demonstração gera geometria no navegador. Para testar o visualizador nativo do GitHub, abra também um arquivo <code>.stl</code> diretamente no repositório. Esta aplicação não depende do visualizador de arquivos do GitHub.</p>
+    <div id="threeStatus" class="small">Carregando motor 3D…</div>
+  </div>
+</section>
+
+<section class="section searchable" id="graficos" data-search="graficos chartjs linha barras doughnut dados">
+  <div class="section-head"><div><h2>07. Gráficos interativos</h2><p>Compare séries e veja como dados podem virar visualizações.</p></div><span class="tag">Chart.js</span></div>
+  <div class="grid">
+    <div class="card"><h3>Duração de jobs (segundos)</h3><div class="chartbox"><canvas id="barChart"></canvas></div></div>
+    <div class="card"><h3>Distribuição de status</h3><div class="chartbox"><canvas id="doughnutChart"></canvas></div></div>
+  </div>
+</section>
+
+<section class="section searchable" id="dados" data-search="dados tabela csv json filtros pesquisa">
+  <div class="section-head"><div><h2>08. Tabelas e dados</h2><p>Filtre uma tabela de demonstração e veja a busca funcionar.</p></div><span class="tag">Interativo</span></div>
+  <div class="card">
+    <div class="row" style="justify-content:space-between;margin-bottom:12px"><div><b>Execuções de exemplo</b><div class="small">Dados fictícios, apenas para demonstração.</div></div><input class="field" id="tableSearch" placeholder="Filtrar linhas..."></div>
+    <div style="overflow:auto"><table id="dataTable" style="border-collapse:collapse;width:100%;min-width:540px"><thead><tr><th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Serviço</th><th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Ambiente</th><th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Status</th><th style="text-align:right;padding:10px;border-bottom:1px solid var(--line)">Duração</th></tr></thead><tbody>
+    <tr><td style="padding:10px;border-bottom:1px solid var(--line)">android-build</td><td>HOM</td><td>Success</td><td style="text-align:right">142 s</td></tr>
+    <tr><td style="padding:10px;border-bottom:1px solid var(--line)">ios-build</td><td>HOM</td><td>Success</td><td style="text-align:right">188 s</td></tr>
+    <tr><td style="padding:10px;border-bottom:1px solid var(--line)">security-scan</td><td>HOM</td><td>Warning</td><td style="text-align:right">76 s</td></tr>
+    <tr><td style="padding:10px;border-bottom:1px solid var(--line)">release-prod</td><td>PROD</td><td>Pending</td><td style="text-align:right">0 s</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section searchable" id="css" data-search="css animação transição hover design responsivo">
+  <div class="section-head"><div><h2>09. CSS, animações e responsividade</h2><p>Exemplos de efeitos que um site pode implementar além do Markdown.</p></div><span class="tag">HTML + CSS</span></div>
+  <div class="grid">
+    <div class="card"><h3>Cartão com hover</h3><div class="resource hoverDemo" style="transition:transform .25s,border-color .25s;cursor:pointer" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#7c9cff'" onmouseout="this.style.transform='';this.style.borderColor='var(--line)'"><b>Passe o mouse aqui</b><span>Transição e elevação via CSS</span></div></div>
+    <div class="card"><h3>Indicador animado</h3><div style="height:12px;background:#26344e;border-radius:99px;overflow:hidden;margin:18px 0"><div style="height:100%;width:72%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;animation:loadbar 2s ease-in-out infinite alternate"></div></div><p class="small">Animações devem respeitar a preferência de movimento reduzido do sistema.</p></div>
+  </div>
+</section>
+
+<section class="section searchable" id="recursos" data-search="catalogo recursos markdown mermaid latex 3d charts html css javascript">
+  <div class="section-head"><div><h2>10. Catálogo de recursos</h2><p>Uma visão geral do que pode ser publicado no GitHub Pages.</p></div><input id="catalogSearch" class="field" placeholder="Filtrar catálogo..."></div>
+  <div class="resource-list" id="resourceList">
+    <div class="resource" data-terms="markdown texto tabelas links"><b>Markdown</b><span>Texto, títulos, listas, tabelas, links e imagens</span></div>
+    <div class="resource" data-terms="mermaid diagramas fluxogramas"><b>Mermaid</b><span>Fluxos, sequência, Gantt e arquitetura</span></div>
+    <div class="resource" data-terms="latex matematica formulas"><b>MathJax / KaTeX</b><span>Fórmulas e equações matemáticas</span></div>
+    <div class="resource" data-terms="threejs 3d webgl"><b>Three.js / WebGL</b><span>Modelos 3D, câmeras, luzes e controles</span></div>
+    <div class="resource" data-terms="chartjs graficos"><b>Chart.js</b><span>Gráficos de linha, barras, pizza e doughnut</span></div>
+    <div class="resource" data-terms="highlightjs codigo"><b>Highlight.js</b><span>Realce de sintaxe em blocos de código</span></div>
+    <div class="resource" data-terms="html css javascript"><b>HTML, CSS e JavaScript</b><span>Layouts e interações customizadas</span></div>
+    <div class="resource" data-terms="svg imagens vetorial"><b>SVG</b><span>Ícones, ilustrações e gráficos vetoriais</span></div>
+    <div class="resource" data-terms="csv json dados"><b>CSV / JSON</b><span>Dados estáticos, tabelas e visualizações</span></div>
+    <div class="resource" data-terms="mapa geojson cartografia"><b>GeoJSON / mapas</b><span>Mapas com bibliotecas geográficas</span></div>
+    <div class="resource" data-terms="audio video media"><b>Áudio e vídeo</b><span>Players HTML5 para mídia compatível</span></div>
+    <div class="resource" data-terms="web components"><b>Web Components</b><span>Componentes reutilizáveis no navegador</span></div>
+    <div class="resource" data-terms="pwa service worker offline"><b>PWA</b><span>Recursos de aplicação web progressiva, com limitações de hospedagem</span></div>
+    <div class="resource" data-terms="search lunr fuse"><b>Busca estática</b><span>Índice local com bibliotecas JavaScript</span></div>
+    <div class="resource" data-terms="accessibility a11y"><b>Acessibilidade</b><span>Semântica, teclado, contraste e leitores de tela</span></div>
+    <div class="resource" data-terms="responsive mobile"><b>Design responsivo</b><span>Layout adaptado para desktop e celular</span></div>
+  </div>
+  <p class="small">O Pages não executa código de servidor. Recursos que precisam de banco de dados, segredos ou APIs privadas exigem um backend externo. Não coloque tokens ou credenciais no JavaScript publicado.</p>
+</section>
+
+<section class="section searchable" id="deploy" data-search="deploy publicação configurar github pages branch root actions">
+  <div class="section-head"><div><h2>11. Publicar no GitHub Pages</h2><p>Passos para publicar este projeto a partir de um repositório.</p></div><span class="tag">Deploy estático</span></div>
+  <div class="card">
+    <ol>
+      <li>Crie um repositório GitHub e envie o conteúdo desta pasta para a raiz.</li>
+      <li>Abra <b>Settings → Pages</b>.</li>
+      <li>Em <b>Build and deployment</b>, selecione <b>Deploy from a branch</b>.</li>
+      <li>Escolha a branch <code>main</code> e a pasta <code>/(root)</code>. Clique em <b>Save</b>.</li>
+      <li>Aguarde a publicação. O endereço normalmente será <code>https://USUARIO.github.io/REPOSITORIO/</code>.</li>
+    </ol>
+    <div class="notice warn"><b>Dependências externas:</b> este laboratório carrega bibliotecas por CDN. Para usar offline, você precisará baixar e versionar as dependências no repositório, respeitando as licenças.</div>
+    <h3>Estrutura do projeto</h3>
+    <pre class="code">github-pages-lab/
+├── index.html
+├── README.md
+└── assets/
+    └── (adicione imagens, modelos e dados aqui)</pre>
+    <div class="actions"><a class="btn primary" href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener">Documentação oficial ↗</a><button class="btn" id="copyUrl">Copiar comando de deploy</button></div>
+    <pre class="code hidden" id="deployCmd">git add .
+git commit -m "feat: add GitHub Pages lab"
+git push origin main</pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <b>GitHub Pages Lab</b> · Demonstração educacional e estática.<br>
+  Bibliotecas externas: Marked, DOMPurify, Highlight.js, Mermaid, MathJax, Three.js e Chart.js. Consulte as licenças e versões antes de usar em produção.<br>
+  <span class="small">Este laboratório não é um produto oficial do GitHub. Conteúdo e métricas de exemplo são fictícios.</span>
+</footer>
+</main>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/lib/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+const mdInput=document.getElementById('mdInput'),mdPreview=document.getElementById('mdPreview');
+const originalMarkdown=mdInput.value;
+function renderMarkdown(){if(!window.marked||!window.DOMPurify){mdPreview.textContent='Bibliotecas de Markdown ainda não carregaram. Verifique a conexão.';return}
+ const raw=marked.parse(mdInput.value,{gfm:true,breaks:false});
+ mdPreview.innerHTML=DOMPurify.sanitize(raw);
+ mdPreview.querySelectorAll('pre code').forEach(el=>window.hljs&&hljs.highlightElement(el));
+ mdPreview.querySelectorAll('input[type=checkbox]').forEach(el=>el.disabled=true);
+}
+document.getElementById('renderMd').addEventListener('click',renderMarkdown);
+document.getElementById('resetMd').addEventListener('click',()=>{mdInput.value=originalMarkdown;renderMarkdown()});
+mdInput.addEventListener('input',()=>{clearTimeout(window.mdTimer);window.mdTimer=setTimeout(renderMarkdown,250)});
+renderMarkdown();
+if(window.hljs)hljs.highlightAll();
+if(window.mermaid){mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict'});}
+
+let scene,camera,renderer,controls,mesh,animationId;
+function init3d(){
+ const canvas=document.getElementById('threeCanvas');
+ if(!window.THREE){document.getElementById('threeStatus').textContent='Three.js não carregou. Verifique a conexão com a internet.';return}
+ scene=new THREE.Scene();scene.background=new THREE.Color(0x0b1020);
+ camera=new THREE.PerspectiveCamera(50,canvas.clientWidth/canvas.clientHeight,0.1,100);
+ camera.position.set(3.3,2.6,4.2);
+ renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);
+ scene.add(new THREE.HemisphereLight(0xbad5ff,0x233047,2.1));
+ const light=new THREE.DirectionalLight(0xffffff,2.4);light.position.set(3,4,5);scene.add(light);
+ if(THREE.OrbitControls){controls=new THREE.OrbitControls(camera,renderer.domElement);controls.enableDamping=true}
+ else {controls={update(){},reset(){camera.position.set(3.3,2.6,4.2);camera.lookAt(0,0,0)}}}
+ const grid=new THREE.GridHelper(10,20,0x3c5278,0x25334d);grid.position.y=-1.25;scene.add(grid);
+ const axes=new THREE.AxesHelper(1.6);scene.add(axes);
+ setShape('box');
+ function animate(){animationId=requestAnimationFrame(animate);if(document.getElementById('autoRotate').checked&&mesh){mesh.rotation.y+=0.006;mesh.rotation.x+=0.0015}if(controls&&controls.update)controls.update();renderer.render(scene,camera)}
+ animate();window.addEventListener('resize',resize3d);
+ document.getElementById('threeStatus').textContent='Motor 3D carregado. Arraste o modelo para girar.';
+}
+function setShape(type){
+ if(!scene||!window.THREE)return;
+ if(mesh){scene.remove(mesh);mesh.geometry.dispose();mesh.material.dispose()}
+ let g;
+ if(type==='sphere')g=new THREE.SphereGeometry(1,48,32);
+ else if(type==='torus')g=new THREE.TorusGeometry(.8,.3,24,80);
+ else if(type==='cone')g=new THREE.ConeGeometry(1,1.8,48);
+ else if(type==='knot')g=new THREE.TorusKnotGeometry(.7,.22,120,16);
+ else g=new THREE.BoxGeometry(1.6,1.6,1.6);
+ mesh=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x6f9dff,metalness:.28,roughness:.28,wireframe:document.getElementById('wireframe').checked}));
+ mesh.scale.setScalar(Number(document.getElementById('scale3d').value));scene.add(mesh);
+}
+function resize3d(){const c=document.getElementById('threeCanvas');if(!renderer||!c.clientWidth)return;camera.aspect=c.clientWidth/c.clientHeight;camera.updateProjectionMatrix();renderer.setSize(c.clientWidth,c.clientHeight,false)}
+document.getElementById('shapeSelect').addEventListener('change',e=>setShape(e.target.value));
+document.getElementById('wireframe').addEventListener('change',()=>setShape(document.getElementById('shapeSelect').value));
+document.getElementById('scale3d').addEventListener('input',e=>mesh&&mesh.scale.setScalar(Number(e.target.value)));
+document.getElementById('reset3d').addEventListener('click',()=>{if(camera){camera.position.set(3.3,2.6,4.2);if(controls&&controls.reset)controls.reset();if(mesh){mesh.rotation.set(0,0,0)}}});
+init3d();
+
+if(window.Chart){
+ const common={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#dbe6fa'}}},scales:{x:{ticks:{color:'#a6b4ce'},grid:{color:'#293650'}},y:{ticks:{color:'#a6b4ce'},grid:{color:'#293650'}}}};
+ new Chart(document.getElementById('barChart'),{type:'bar',data:{labels:['Android build','iOS build','Security scan'],datasets:[{label:'Segundos',data:[142,188,76],backgroundColor:['#7c9cff','#59d7b5','#f4c66a'],borderRadius:7}]},options:common});
+ new Chart(document.getElementById('doughnutChart'),{type:'doughnut',data:{labels:['Success','Warning','Pending'],datasets:[{data:[2,1,1],backgroundColor:['#59d7b5','#f4c66a','#7c9cff'],borderColor:'#111a2e'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#dbe6fa'}}}}});
+}
+document.getElementById('tableSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('#dataTable tbody tr').forEach(tr=>tr.classList.toggle('hidden',!tr.innerText.toLowerCase().includes(q)))});
+function filterResources(q){document.querySelectorAll('#resourceList .resource').forEach(el=>el.classList.toggle('hidden',!(el.innerText+' '+el.dataset.terms).toLowerCase().includes(q.toLowerCase())))}
+document.getElementById('catalogSearch').addEventListener('input',e=>filterResources(e.target.value));
+document.getElementById('globalSearch').addEventListener('input',e=>{
+ const q=e.target.value.toLowerCase();
+ document.querySelectorAll('.searchable').forEach(el=>el.classList.toggle('hidden',q&&!((el.innerText+' '+el.dataset.search).toLowerCase().includes(q))));
+ if(q)document.getElementById('recursos').scrollIntoView({behavior:'smooth',block:'start'});
+ else document.querySelectorAll('.searchable').forEach(el=>el.classList.remove('hidden'));
+});
+document.getElementById('themeBtn').addEventListener('click',()=>{document.body.classList.toggle('highContrast');document.body.style.setProperty('--bg',document.body.classList.contains('highContrast')?'#000':'#0b1020');document.body.style.setProperty('--panel',document.body.classList.contains('highContrast')?'#101010':'#111a2e');document.body.style.setProperty('--line',document.body.classList.contains('highContrast')?'#888':'#2a3855')});
+document.getElementById('copyUrl').addEventListener('click',async()=>{const txt='git add .\\ngit commit -m "feat: add GitHub Pages lab"\\ngit push origin main';try{await navigator.clipboard.writeText(txt);document.getElementById('copyUrl').textContent='Comandos copiados!'}catch(e){document.getElementById('deployCmd').classList.remove('hidden')}});
+</script>
+<style>
+@keyframes loadbar{from{width:35%}to{width:92%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
 </body>
 </html>
